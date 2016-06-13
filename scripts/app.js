@@ -222,7 +222,7 @@
 
     // Add code to check if the user has any subscribed cities, and render 
     // those or the default data here.
-    
+
     /****************************************************************************   
      *
      * Code required to start the app
@@ -250,6 +250,14 @@
             }
   ];
         app.saveSelectedCities();
+    }
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('service-worker.js')
+            .then(function () {
+                console.log('Service Worker Registered');
+            });
     }
 
 })();
